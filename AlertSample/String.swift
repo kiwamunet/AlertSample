@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     init(_ clazz: AnyClass, shortName: Bool = true) {

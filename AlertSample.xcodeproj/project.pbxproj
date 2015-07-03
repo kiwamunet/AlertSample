@@ -7,12 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D98B9021B42B6520080FB47 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D98B9011B42B6520080FB47 /* UIFont.swift */; };
+		8DA187491B416CC100C4365F /* ReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA187481B416CC100C4365F /* ReportManager.swift */; };
 		8DF0B6281B41604900D38A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6271B41604900D38A37 /* AppDelegate.swift */; };
 		8DF0B62A1B41604900D38A37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6291B41604900D38A37 /* ViewController.swift */; };
 		8DF0B62D1B41604900D38A37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF0B62B1B41604900D38A37 /* Main.storyboard */; };
 		8DF0B62F1B41604900D38A37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF0B62E1B41604900D38A37 /* Images.xcassets */; };
 		8DF0B6321B41604900D38A37 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF0B6301B41604900D38A37 /* LaunchScreen.xib */; };
 		8DF0B63E1B41604900D38A37 /* AlertSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B63D1B41604900D38A37 /* AlertSampleTests.swift */; };
+		8DF0B64B1B41609100D38A37 /* PopAlertInnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF0B6471B41609100D38A37 /* PopAlertInnerView.xib */; };
+		8DF0B64C1B41609100D38A37 /* PopAlertInnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6481B41609100D38A37 /* PopAlertInnerView.swift */; };
+		8DF0B64D1B41609100D38A37 /* PopAlertDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6491B41609100D38A37 /* PopAlertDescription.swift */; };
+		8DF0B64E1B41609100D38A37 /* PopAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B64A1B41609100D38A37 /* PopAlertView.swift */; };
+		8DF0B6501B41609E00D38A37 /* PopAlertViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B64F1B41609E00D38A37 /* PopAlertViewService.swift */; };
+		8DF0B6521B4160D700D38A37 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6511B4160D700D38A37 /* Functions.swift */; };
+		8DF0B6541B4161F300D38A37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6531B4161F300D38A37 /* Reachability.swift */; };
+		8DF0B6561B41633B00D38A37 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6551B41633B00D38A37 /* UIView.swift */; };
+		8DF0B6581B41664500D38A37 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6571B41664500D38A37 /* UIColor.swift */; };
+		8DF0B65B1B41666800D38A37 /* icomoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6591B41666800D38A37 /* icomoon.swift */; };
+		8DF0B65C1B41666800D38A37 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DF0B65A1B41666800D38A37 /* icomoon.ttf */; };
+		8DF0B6601B41670E00D38A37 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B65F1B41670E00D38A37 /* UIScreen.swift */; };
+		8DF0B6621B41672300D38A37 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6611B41672300D38A37 /* String.swift */; };
+		8DF0B6641B41677700D38A37 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6631B41677700D38A37 /* UIApplication.swift */; };
+		8DF0B6661B4167C000D38A37 /* AnimationChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0B6651B4167C000D38A37 /* AnimationChain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D98B9011B42B6520080FB47 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		8DA187481B416CC100C4365F /* ReportManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportManager.swift; sourceTree = "<group>"; };
 		8DF0B6221B41604900D38A37 /* AlertSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF0B6261B41604900D38A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DF0B6271B41604900D38A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +55,21 @@
 		8DF0B6371B41604900D38A37 /* AlertSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF0B63C1B41604900D38A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DF0B63D1B41604900D38A37 /* AlertSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSampleTests.swift; sourceTree = "<group>"; };
+		8DF0B6471B41609100D38A37 /* PopAlertInnerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopAlertInnerView.xib; sourceTree = "<group>"; };
+		8DF0B6481B41609100D38A37 /* PopAlertInnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAlertInnerView.swift; sourceTree = "<group>"; };
+		8DF0B6491B41609100D38A37 /* PopAlertDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAlertDescription.swift; sourceTree = "<group>"; };
+		8DF0B64A1B41609100D38A37 /* PopAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAlertView.swift; sourceTree = "<group>"; };
+		8DF0B64F1B41609E00D38A37 /* PopAlertViewService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAlertViewService.swift; sourceTree = "<group>"; };
+		8DF0B6511B4160D700D38A37 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		8DF0B6531B4161F300D38A37 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8DF0B6551B41633B00D38A37 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8DF0B6571B41664500D38A37 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		8DF0B6591B41666800D38A37 /* icomoon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = icomoon.swift; sourceTree = "<group>"; };
+		8DF0B65A1B41666800D38A37 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
+		8DF0B65F1B41670E00D38A37 /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		8DF0B6611B41672300D38A37 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		8DF0B6631B41677700D38A37 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		8DF0B6651B4167C000D38A37 /* AnimationChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationChain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8DA1874A1B4170F300C4365F /* other */ = {
+			isa = PBXGroup;
+			children = (
+				8DF0B62B1B41604900D38A37 /* Main.storyboard */,
+				8DF0B6511B4160D700D38A37 /* Functions.swift */,
+				8DF0B6531B4161F300D38A37 /* Reachability.swift */,
+				8DF0B6631B41677700D38A37 /* UIApplication.swift */,
+				8DF0B6551B41633B00D38A37 /* UIView.swift */,
+				8DF0B6571B41664500D38A37 /* UIColor.swift */,
+				8DF0B65F1B41670E00D38A37 /* UIScreen.swift */,
+				8DF0B6611B41672300D38A37 /* String.swift */,
+				8DF0B6651B4167C000D38A37 /* AnimationChain.swift */,
+				8DA187481B416CC100C4365F /* ReportManager.swift */,
+				8D98B9011B42B6520080FB47 /* UIFont.swift */,
+				8DF0B6591B41666800D38A37 /* icomoon.swift */,
+				8DF0B65A1B41666800D38A37 /* icomoon.ttf */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
 		8DF0B6191B41604900D38A37 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +133,12 @@
 			children = (
 				8DF0B6271B41604900D38A37 /* AppDelegate.swift */,
 				8DF0B6291B41604900D38A37 /* ViewController.swift */,
-				8DF0B62B1B41604900D38A37 /* Main.storyboard */,
+				8DF0B6471B41609100D38A37 /* PopAlertInnerView.xib */,
+				8DF0B6481B41609100D38A37 /* PopAlertInnerView.swift */,
+				8DF0B64A1B41609100D38A37 /* PopAlertView.swift */,
+				8DF0B64F1B41609E00D38A37 /* PopAlertViewService.swift */,
+				8DF0B6491B41609100D38A37 /* PopAlertDescription.swift */,
+				8DA1874A1B4170F300C4365F /* other */,
 				8DF0B62E1B41604900D38A37 /* Images.xcassets */,
 				8DF0B6301B41604900D38A37 /* LaunchScreen.xib */,
 				8DF0B6251B41604900D38A37 /* Supporting Files */,
@@ -192,6 +251,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF0B65C1B41666800D38A37 /* icomoon.ttf in Resources */,
+				8DF0B64B1B41609100D38A37 /* PopAlertInnerView.xib in Resources */,
 				8DF0B62D1B41604900D38A37 /* Main.storyboard in Resources */,
 				8DF0B6321B41604900D38A37 /* LaunchScreen.xib in Resources */,
 				8DF0B62F1B41604900D38A37 /* Images.xcassets in Resources */,
@@ -213,7 +274,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DF0B62A1B41604900D38A37 /* ViewController.swift in Sources */,
+				8D98B9021B42B6520080FB47 /* UIFont.swift in Sources */,
+				8DF0B6621B41672300D38A37 /* String.swift in Sources */,
+				8DF0B6501B41609E00D38A37 /* PopAlertViewService.swift in Sources */,
+				8DF0B64E1B41609100D38A37 /* PopAlertView.swift in Sources */,
+				8DF0B6521B4160D700D38A37 /* Functions.swift in Sources */,
+				8DA187491B416CC100C4365F /* ReportManager.swift in Sources */,
+				8DF0B6661B4167C000D38A37 /* AnimationChain.swift in Sources */,
+				8DF0B64C1B41609100D38A37 /* PopAlertInnerView.swift in Sources */,
 				8DF0B6281B41604900D38A37 /* AppDelegate.swift in Sources */,
+				8DF0B6541B4161F300D38A37 /* Reachability.swift in Sources */,
+				8DF0B6641B41677700D38A37 /* UIApplication.swift in Sources */,
+				8DF0B6601B41670E00D38A37 /* UIScreen.swift in Sources */,
+				8DF0B65B1B41666800D38A37 /* icomoon.swift in Sources */,
+				8DF0B6561B41633B00D38A37 /* UIView.swift in Sources */,
+				8DF0B64D1B41609100D38A37 /* PopAlertDescription.swift in Sources */,
+				8DF0B6581B41664500D38A37 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +485,7 @@
 				8DF0B6431B41604900D38A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DF0B6441B41604900D38A37 /* Build configuration list for PBXNativeTarget "AlertSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +494,7 @@
 				8DF0B6461B41604900D38A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

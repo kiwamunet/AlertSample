@@ -12,7 +12,7 @@ class ReportManager: NSObject {
     
     class func postReport(channelId: String, userId: String, nickname: String, msg: String, msgId: String, completion: (Bool) -> ()) {
         
-        let param = ["postUserId": LoginManager.sharedInstance.me!.nickname,
+        let param = ["postUserId": "おれ",
                      "channelId": channelId,
                      "userId": userId,
                      "nickname": nickname,
@@ -20,15 +20,15 @@ class ReportManager: NSObject {
                      "messageId": msgId
         ]
         
-        NetworkManager.sharedInstance.requestActivePostApi(API_URL_REPORT, parameters: param, success: { response in
-            if response != nil {
+//        NetworkManager.sharedInstance.requestActivePostApi(API_URL_REPORT, parameters: param, success: { response in
+//            if response != nil {
                 completion(true)
-            } else {
-                completion(false)
-            }
-        }, failure: { (task, error) in
-            completion(false)
-        })
+//            } else {
+//                completion(false)
+//            }
+//        }, failure: { (task, error) in
+//            completion(false)
+//        })
         
     }
 }

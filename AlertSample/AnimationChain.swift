@@ -5,6 +5,7 @@
 //  Created by A12893 on 2014/12/11.
 //  Copyright (c) 2014年 Ameba Studio. All rights reserved.
 //
+import UIKit
 
 private let defaultOptions = UIViewAnimationOptions.CurveEaseOut
 

@@ -7,14 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
-enum AlertContentType {
-    case Contents(str: String)
-    case Selection(select: (yes: String, no: String), str: String, completion: (Bool) -> ())
-    case SelectionReport(select: (yes: String, no: String), str: String, image: UIImage, name: String, reportMsg: String, completion: (Bool) -> ())
-    case Agreement(title: String, str: String, completion: () -> ())
-    case Update(title: String, str: String, completion: () -> ())
-    case Toast()
+
+enum AlertType: Int {
+    case Contents = 0, Selection, UserBan, AutoHide
 }
 
 
@@ -22,30 +19,42 @@ enum AlertContentType {
 
 
 
-enum AlertSize: Int {
-    case Small = 1, Middle, Large, CustomSize
-    func getSize(percent: CGFloat?) -> CGRect {
-        switch self {
-        case .Small:
-            let flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 120)
-            return flame
-        case .Middle:
-            let flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 160)
-            return flame
-        case .Large:
-            let flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 240)
-            return flame
-        case .CustomSize:
-            if percent != nil {
-                let flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, UIScreen.mainScreen().bounds.height * percent!)
-                return flame
-            } else {
-                let flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, UIScreen.mainScreen().bounds.height * 0.5)
-                return flame
-            }
-        }
-    }
-}
+
+//enum AlertSize: Int {
+//    case Small = 1, Middle, Large, Custom
+//    func getSize() -> CGRect {
+//        var flame = CGRectZero
+//        switch self {
+//        case .Small:
+//            if UIApplication.isPortrait {
+//                flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width * 0.9, UIScreen.mainScreen().bounds.width * 0.5)
+//            } else {
+//                flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 120)
+//            }
+//            return flame
+//        case .Middle:
+//            if UIApplication.isPortrait {
+//                flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width * 0.9, UIScreen.mainScreen().bounds.height * 0.6)
+//            } else {
+//                flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 160)
+//            }
+//            return flame
+//        case .Large:
+//            if UIApplication.isPortrait {
+//                flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 240)
+//            } else {
+//                flame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 240)
+//            }
+//            return flame
+//        case .Custom:
+//            break
+//        }
+//    }
+//}
+
+
+
+
 
 
 
@@ -57,6 +66,7 @@ class PopAlertView: UIView, PopAlertInnerViewDelegate {
     var innerView: PopAlertInnerView? = nil
     var countNum = 0
     var timer : NSTimer!
+
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -69,7 +79,9 @@ class PopAlertView: UIView, PopAlertInnerViewDelegate {
     }
     
     
-    func setView(windowView: CGRect? = nil, inner: CGRect? = nil , size: AlertSize? = nil, isCenter: Bool? = nil) {
+    func setView(windowView: CGRect? = nil, inner: CGRect? = nil, isCenter: Bool = false, contents: [String: Any?]) {
+        
+        
         
         if windowView == nil {
             if UIApplication.isPortrait {
@@ -81,38 +93,7 @@ class PopAlertView: UIView, PopAlertInnerViewDelegate {
             self.win = UIWindow(frame: windowView!)
         }
         
-        
-        if inner == nil {
-            if UIApplication.isPortrait {
-                if size != nil {
-                    switch size! {
-                    // サイズの振り分け
-                    case AlertSize.Small:
-                        self.frame = AlertSize.Small.getSize(nil)
-                    case AlertSize.Middle:
-                        self.frame = AlertSize.Middle.getSize(nil)
-                    case AlertSize.Large:
-                        self.frame = AlertSize.Large.getSize(nil)
-                    case AlertSize.CustomSize:
-                        self.frame = AlertSize.CustomSize.getSize(10.0)
-                    default:
-                        break
-                    }
-                } else {
-                    self.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, UIScreen.mainScreen().bounds.height/3)
-                }
-            } else {
-                self.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, UIScreen.mainScreen().bounds.height * 3/5)
-            }
-            self.center = CGPointMake(CGRectGetMidX(self.win!.bounds), CGRectGetMidY(self.win!.bounds))
-        } else {
-            self.frame = inner!
-        }
-        
-        if isCenter != nil {
-            self.center = CGPointMake(CGRectGetMidX(self.win!.bounds), CGRectGetMidY(self.win!.bounds))
-        }
-        
+        self.frame = (self.win?.frame)!
         self.win!.windowLevel = UIWindowLevelAlert
         self.win!.backgroundColor = UIColor.clearColor()
         
@@ -123,8 +104,18 @@ class PopAlertView: UIView, PopAlertInnerViewDelegate {
         bgView.alpha = 0.5
         self.win!.addSubview(bgView)
         
-        self.innerView = PopAlertInnerView(frame: CGRectMake(0, 0, self.size.width, self.size.height))
+        
+        
+        let resizeHeight = min(PopAlertInnerView.sizeForView(text: (contents[PopAlertViewContentTitleKey] as? String) ?? nil, viewWidth: self.size.width, type: (contents[PopAlertViewTypeKey] as? AlertType)!), UIScreen.mainScreen().bounds.height * 0.6)
+        self.innerView = PopAlertInnerView(frame: CGRectMake(0, 0, self.frame.size.width-40, resizeHeight))
         self.innerView!.delegate = self
+       
+        //センターがtrueの場合はセンターに合わせる
+        if isCenter {
+            self.innerView!.center = CGPointMake(CGRectGetMidX(self.win!.bounds), CGRectGetMidY(self.win!.bounds))
+        }
+        
+        
         
         self.addSubview(self.innerView!)
         self.backgroundColor = UIColor.clearColor()
@@ -133,31 +124,28 @@ class PopAlertView: UIView, PopAlertInnerViewDelegate {
         }
     }
     
-    func show(type: AlertContentType) {
-        self.showAnimated(true, type: type)
-    }
+
     
-    func showToast(type: AlertContentType) {
-        self.showAnimated(true, type: type)
-        self.toasTimer()
-    }
     
-    private func toasTimer () {
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countTime:", userInfo: nil, repeats: true)
-    }
     
-    func countTime (time: NSTimer) {
-        countNum++
-        if countNum >= 2 {
-            self.hide()
-            countNum = 0
-            timer.invalidate()
-        }
-    }
     
-    private func showAnimated(animated: Bool, type: AlertContentType) {
+    
+    
+    
+    func show(contents: [String: Any?]) {
         
-        self.innerView!.setTypeLayout(type, block: { [weak self] in
+        if let alertType = contents[PopAlertViewTypeKey] as? AlertType {
+            if alertType == AlertType.AutoHide {
+                self.toasTimer(2.0)
+            }
+        }
+        self.showAnimated(true, contents: contents)
+    
+    }
+    
+    
+    private func showAnimated(animated: Bool, contents:[String: Any?]) {
+        self.innerView!.setTypeLayout(contents, block: { [weak self] in
             self?.win!.addSubview(self!)
             self?.win!.makeKeyAndVisible()
             
@@ -172,17 +160,51 @@ class PopAlertView: UIView, PopAlertInnerViewDelegate {
                         }).start()
                 }
             }
-            })
+        })
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private func toasTimer(interval: NSTimeInterval) {
+        if timer != nil {
+            timer.invalidate()
+            timer = nil
+        }
+        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: "countTime:", userInfo: nil, repeats: true)
+    }
+    
+    func countTime (time: NSTimer) {
+        self.hide()
+        timer.invalidate()
+        timer = nil
+    }
+    
+    
+    
+    
+    
     
     func hide() {
         self.hideAnimated(true)
         PopAlertViewService.sharedInstance.next()
     }
     
+    
+    
     func hideWithCompletion(completion: () -> ()) {
         self.hideAnimated(true, completion: completion)
     }
+    
+    
+    
     
     private func hideAnimated(animated: Bool, completion: () -> () = {}) {
         if animated {

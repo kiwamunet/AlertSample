@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIApplication {
     class var isLandscape: Bool { return sharedApplication().statusBarOrientation.isLandscape }

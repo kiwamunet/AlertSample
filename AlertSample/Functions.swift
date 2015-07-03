@@ -191,15 +191,15 @@ func optionalTuple<A, B, C, D, E, F, G, H>(a: A?, b: B?, c: C?, d: D?, e: E?, f:
 }
 
 
-func isAspectRatio16x9() -> Bool {
-    var deviceRatio:Float = Float(UIScreen.commonWidth / UIScreen.commonHeight)
-    if UIApplication.isLandscape {
-        deviceRatio = Float(UIScreen.commonHeight / UIScreen.commonWidth)
-    }
-    let ratio:Float =  9 / 16
-    
-    return abs(deviceRatio - ratio) < 0.01
-}
+//func isAspectRatio16x9() -> Bool {
+//    var deviceRatio:Float = Float(UIScreen.commonWidth / UIScreen.commonHeight)
+//    if UIApplication.isLandscape {
+//        deviceRatio = Float(UIScreen.commonHeight / UIScreen.commonWidth)
+//    }
+//    let ratio:Float =  9 / 16
+//    
+//    return abs(deviceRatio - ratio) < 0.01
+//}
 
 
 func delay(delay:Double, closure:()->()) {

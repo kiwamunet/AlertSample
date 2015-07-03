@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol WithProxy {
     typealias ProxyType: UIView

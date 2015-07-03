@@ -86,35 +86,3 @@ enum AlertSelectionType: Int {
     }
 }
 
-
-///**
-//AlertDescriptionType
-//アラートの文言の種別enum
-//*/
-//enum AlertDescriptionType: Int {
-//    case Error=0, IsNull, NotArrive, NeedAgreement, IsNew, Success
-//    
-//    /**
-//    getDescription
-//    アラート説明文の取得
-//    */
-//    func getDescription(text: String?) -> String {
-//        switch self {
-//        case .Error:
-//            return "正常に処理が行えませんでした。再度操作して下さい。"
-//        case .IsNull:
-//            let str = text ?? ""
-//            return str + "の入力が確認できません。\n" + str + "を入力して下さい"
-//        case .NotArrive:
-//            return "個人情報を取得できませんでした。プロフィールから改めて設定してください。"
-//        case .NeedAgreement:
-//            return "アドレスにメールが送られました。ご確認後再度ログインしてください。"
-//        case .IsNew:
-//            let str = text ?? ""
-//            return str + "での登録が完了しました。"
-//        case .Success:
-//            let str = text ?? ""
-//            return str + "からログインできました。"
-//        }
-//    }
-//}
